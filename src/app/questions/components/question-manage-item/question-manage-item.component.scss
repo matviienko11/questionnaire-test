@@ -1,0 +1,18 @@
+.card {
+  width: 25rem;
+  height: 12.5rem;
+  position: relative;
+  &--actions {
+    position: absolute;
+    bottom: 1rem;
+  }
+}
+:host {
+  ::ng-deep {
+    mat-card-header {
+      div {
+        margin: 0;
+      }
+    }
+  }
+}

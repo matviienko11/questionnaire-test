@@ -1,0 +1,23 @@
+<div class="list-wrapper">
+  <div class="section">
+    <h3>Unanswered</h3>
+    <div>
+      <div *ngFor="let uAnswer of unanswered">
+        <app-question-list-item [item]="uAnswer" (itemToAnswer)="handleAnswer($event)"></app-question-list-item>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h3>Answered</h3>
+    <div>
+      <div *ngFor="let AAnswer of answered">
+        <app-question-list-item [item]="AAnswer" (itemToRollBack)="handleAnswer($event)"></app-question-list-item>
+      </div>
+    </div>
+  </div>
+
+  <div class="back" (click)="navigateToManage()">
+    Go to Question Management
+    <mat-icon>arrow_right_alt</mat-icon>
+  </div>
+</div>

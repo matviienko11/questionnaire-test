@@ -1,0 +1,37 @@
+<form class="form" [formGroup]="form" *ngIf="form">
+  <mat-form-field class="form--field" appearance="outline">
+    <mat-label>Question</mat-label>
+    <input matInput placeholder="Placeholder" formControlName="body">
+  </mat-form-field>
+
+  <div class="form--radio">
+    <div>Question type</div>
+    <mat-radio-group class="form--radio-select" color="primary" aria-label="Select the type" formControlName="type" (change)="handleTypeChange($event)">
+      <mat-radio-button *ngFor="let type of questionTypes" value="{{ type.value }}">{{ type.label }}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div *ngIf="!isOpenQuestion && isOpenQuestion !== undefined" class="form--create_answers">
+    <div class="form--create_answers-header">Create answers</div>
+    <div class="form--create_answers-field">
+      <mat-form-field class="form--create_answers-field-input" appearance="outline">
+        <mat-label>Enter here ...</mat-label>
+        <input matInput required [(ngModel)]="answerBody" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <button class="form--create_answers-field-button" mat-raised-button color="primary" type="button" (click)="addAnswer()">Add answer</button>
+    </div>
+  </div>
+
+  <div class="form--answer_list" *ngIf="!isOpenQuestion && form.controls.answers.value.length">
+    <div class="form--answer_list-header">List of possible answers:</div>
+    <div class="form--answer_list-item" *ngFor="let item of form.controls.answers.value; let i = index">
+      <div>{{ i + 1 }}. {{ item.text }}</div>
+      <mat-icon aria-hidden="false" aria-label="Delete" (click)="removeAnswer(i)">delete</mat-icon>
+    </div>
+  </div>
+
+  <div class="form--actions" *ngIf="(form.valid && form.controls.answers.value.length >= 2) || isOpenQuestion">
+    <button *ngIf="!questionToEdit" mat-raised-button color="primary" type="button" (click)="createQuestion()">Create</button>
+    <button *ngIf="questionToEdit" mat-raised-button color="primary" type="button" (click)="editQuestion()">Edit</button>
+  </div>
+</form>

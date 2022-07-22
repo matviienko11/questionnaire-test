@@ -1,0 +1,27 @@
+.list-wrapper {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  .back {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    width: 15.625rem;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.section {
+  flex: 1;
+  padding: 1.5rem;
+  &:first-child {
+    border-right: 1px solid grey;
+  }
+  h3 {
+    text-align: center;
+  }
+}

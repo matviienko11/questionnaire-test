@@ -1,0 +1,24 @@
+:host {
+  position: relative;
+}
+
+.edit-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  width: 15.625rem;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,31 @@
+.manage-wrapper {
+  padding: 2rem;
+  position: relative;
+  &--list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .back {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    width: 15.625rem;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .front {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    width: 15.625rem;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

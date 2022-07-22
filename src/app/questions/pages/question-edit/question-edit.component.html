@@ -1,0 +1,8 @@
+<div class="edit-wrapper">
+  <h2>Edit question</h2>
+  <app-form [questionToEdit]="question" (editedQuestion)="editQuestion($event)"></app-form>
+</div>
+<div class="back" (click)="navigateToManage()">
+  <mat-icon>keyboard_backspace</mat-icon>
+  Go to Question Management
+</div>

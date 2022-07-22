@@ -1,0 +1,17 @@
+<div class="manage-wrapper">
+  <h2>Question Management</h2>
+  <div class="manage-wrapper--list">
+    <app-question-manage-item *ngFor="let question of questions$ | async"
+                              [item]="question"
+                              (itemToDelete)="deleteQuestion($event)" (edit)="redirectToEdit($event)"></app-question-manage-item>
+  </div>
+  <div class="back" (click)="navigateToCreate()">
+    Go to Question Creation
+    <mat-icon>arrow_right_alt</mat-icon>
+  </div>
+  <div class="front" (click)="navigateToList()">
+    <mat-icon>keyboard_backspace</mat-icon>
+    Go to Question List
+  </div>
+</div>
+

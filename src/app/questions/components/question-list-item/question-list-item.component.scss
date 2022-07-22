@@ -1,0 +1,11 @@
+:host {
+  ::ng-deep {
+    mat-card {
+      margin-bottom: 1rem;
+      mat-card-content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
